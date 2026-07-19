@@ -54,12 +54,63 @@
   <meta name="theme-color" content="{{ site.brand.primary_color }}">
   <meta name="msapplication-TileColor" content="{{ site.brand.primary_color }}">
 
-  <!-- ── Styles (Critical CSS inlined, full loaded async) ── -->
+  <!-- ── Styles ────────────────────────────────────────── -->
   <style>
     {% include "assets/css/critical.css" %}
   </style>
   <link rel="preload" href="/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
+  <!-- Tailwind CSS via CDN (runtime compilation) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      prefix: '',
+      important: false,
+      separator: ':',
+      theme: {
+        extend: {
+          colors: {
+            midnight: { DEFAULT: '#0A0B1E', light: '#1A1B3A', medium: '#2D2F5E' },
+            cloud: { DEFAULT: '#F7F7FA', dark: '#E8E8F0' },
+            gold: { DEFAULT: '#D4AF37', light: '#E4C65A', dark: '#B8952E' },
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          fontSize: {
+            'display-xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+            'display-lg': ['3.5rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+            'display': ['2.75rem', { lineHeight: '1.2', letterSpacing: '-0.015em' }],
+            'heading-xl': ['2.25rem', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
+            'heading-lg': ['1.75rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+            'heading': ['1.375rem', { lineHeight: '1.35', letterSpacing: '-0.005em' }],
+            'body-lg': ['1.125rem', { lineHeight: '1.7' }],
+            'body': ['1rem', { lineHeight: '1.7' }],
+            'body-sm': ['0.875rem', { lineHeight: '1.6' }],
+            'caption': ['0.75rem', { lineHeight: '1.5' }],
+          },
+          boxShadow: {
+            'soft': '0 2px 16px rgba(10, 11, 30, 0.06), 0 1px 4px rgba(10, 11, 30, 0.04)',
+            'elevated': '0 8px 32px rgba(10, 11, 30, 0.08), 0 2px 8px rgba(10, 11, 30, 0.04)',
+            'deep': '0 16px 48px rgba(10, 11, 30, 0.12), 0 4px 16px rgba(10, 11, 30, 0.06)',
+            'gold': '0 4px 24px rgba(212, 175, 55, 0.25)',
+            'btn': '0 2px 8px rgba(10, 11, 30, 0.12)',
+            'btn-hover': '0 4px 16px rgba(10, 11, 30, 0.16)',
+          },
+          backgroundImage: {
+            'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #E4C65A 50%, #B8952E 100%)',
+            'hero-gradient': 'linear-gradient(135deg, #0A0B1E 0%, #1A1B3A 50%, #2D2F5E 100%)',
+          },
+          maxWidth: {
+            'page': '1440px',
+            'content': '1200px',
+            'narrow': '800px',
+          },
+        },
+      },
+    }
+  </script>
 
   <!-- ── Schema.org / JSON-LD ───────────────────────────── -->
   <script type="application/ld+json">
