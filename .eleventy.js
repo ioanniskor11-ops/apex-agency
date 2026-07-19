@@ -134,19 +134,24 @@ module.exports = function (eleventyConfig) {
   });
 
   // ── Transforms ──────────────────────────────────────────
-  // Minify HTML in production
+  // Minify HTML in production (wrapped in try/catch for safety)
   if (process.env.NODE_ENV === 'production') {
     eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
       if (outputPath && outputPath.endsWith('.html')) {
-        const htmlmin = require('html-minifier-terser');
-        return htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          minifyCSS: true,
-          minifyJS: true,
-          minifyURLs: true,
-        });
+        try {
+          const htmlmin = require('html-minifier-terser');
+          return htmlmin.minify(content, {
+            useShortDoctype: true,
+            removeComments: true,
+            collapseWhitespace: true,
+            minifyCSS: true,
+            minifyJS: true,
+            minifyURLs: true,
+          });
+        } catch (e) {
+          // html-minifier-terser not available, skip minification
+          return content;
+        }
       }
       return content;
     });
