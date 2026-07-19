@@ -1,0 +1,336 @@
+---
+layout: default
+title: "Apex Agency — Growth Partner for Premium Brands"
+description: "We engineer exponential growth for premium brands through data-driven strategy, creative excellence, and technological innovation."
+permalink: /
+og_title: "Apex Agency — Growth Partner for Premium Brands"
+og_description: "We engineer exponential growth for premium brands. Data-driven strategy, creative excellence, and technological innovation."
+schema_type: "Organization"
+---
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO SECTION
+     ════════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg">
+    <img src="https://images.ctfassets.net/placeholder/hero-bg.jpg" alt="" loading="eager" aria-hidden="true">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="container-page relative z-10 w-full">
+    <div class="hero-content">
+      <span class="hero-tagline" data-animate>Premium Growth Partner</span>
+      <h1 class="hero-title" data-animate data-delay="100">
+        We Engineer<br>
+        <span class="text-gold">Exponential Growth</span>
+      </h1>
+      <p class="hero-subtitle" data-animate data-delay="200">
+        {{ site.short_description }}
+      </p>
+      <div class="hero-actions" data-animate data-delay="300">
+        <a href="/contact" class="hero-btn-primary">
+          Start Your Growth Journey
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="/work" class="hero-btn-secondary">
+          View Our Work
+        </a>
+      </div>
+
+      <!-- Hero Stats -->
+      <div class="hero-stats" data-animate data-delay="400">
+        {% for stat in testimonials.stats limit:3 %}
+        <div>
+          <div class="hero-stat-value">
+            <span data-count-up="{{ stat.value | replace: '+', '' | replace: 'B', '' | replace: '%', '' | replace: 'x', '' | replace: '$', '' | strip }}" data-count-suffix="{{ stat.value | replace: '0', '' | replace: '1', '' | replace: '2', '' | replace: '3', '' | replace: '4', '' | replace: '5', '' | replace: '6', '' | replace: '7', '' | replace: '8', '' | replace: '9', '' | strip }}">
+              {{ stat.value }}
+            </span>
+          </div>
+          <div class="hero-stat-label">{{ stat.label }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     CLIENT LOGO CLOUD
+     ════════════════════════════════════════════════════════════ -->
+<section class="py-12 md:py-16 bg-cloud-dark/30">
+  <div class="container-page">
+    <p class="text-center text-caption font-semibold uppercase tracking-widest text-midnight/40 mb-8">
+      Trusted by Leading Brands Worldwide
+    </p>
+    <div class="logo-cloud" data-animate>
+      {% for client in trust_badges.client_logos %}
+      <img src="{{ client.logo }}" alt="{{ client.name }}" width="120" height="40" loading="lazy">
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     SERVICES PREVIEW
+     ════════════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="services-heading">
+  <div class="container-page">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+      <span class="section-label">Our Expertise</span>
+      <h2 id="services-heading" class="section-title">Full-Service Growth Engine</h2>
+      <p class="section-desc mx-auto">
+        Six interconnected practices working in concert to deliver 
+        measurable, sustainable growth for your brand.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {% for service in services.services limit:6 %}
+      <article class="group relative p-8 rounded-lg bg-white shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
+        <div class="w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+          {% case service.icon %}
+          {% when 'chart-line' %}
+          <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+          </svg>
+          {% when 'megaphone' %}
+          <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+          </svg>
+          {% when 'paint-brush' %}
+          <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+          </svg>
+          {% when 'code' %}
+          <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+          {% when 'chart-bar' %}
+          <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+          {% when 'pen-fancy' %}
+          <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+          </svg>
+          {% endcase %}
+        </div>
+        <h3 class="font-display text-heading font-semibold mb-3">{{ service.title }}</h3>
+        <p class="text-body-sm text-midnight/60 leading-relaxed mb-6">{{ service.short_description }}</p>
+        
+        <!-- Results metrics -->
+        <div class="grid grid-cols-3 gap-3 mb-6">
+          {% for result in service.results %}
+          <div class="text-center p-2 rounded bg-cloud-dark/30">
+            <p class="font-display text-heading-sm font-bold text-gold">{{ result.metric }}</p>
+            <p class="text-caption text-midnight/50">{{ result.label }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <a href="{{ service.cta_url }}" class="inline-flex items-center gap-2 text-body-sm font-semibold text-gold hover:text-gold-light transition-colors group/link">
+          {{ service.cta_text }}
+          <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-12" data-animate>
+      <a href="/services" class="btn btn-secondary btn-lg">
+        Explore All Services
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     STATS COUNTER SECTION
+     ════════════════════════════════════════════════════════════ -->
+<section class="section-dark relative overflow-hidden" aria-label="Our impact by the numbers">
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+  
+  <div class="container-page relative z-10">
+    <div class="text-center mb-16" data-animate>
+      <span class="section-label">By the Numbers</span>
+      <h2 class="section-title-light">Results That Speak for Themselves</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12">
+      {% for stat in testimonials.stats %}
+      <div class="text-center" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
+        <div class="stat-value">
+          <span data-count-up="{{ stat.value | replace: '+', '' | replace: 'B', '' | replace: '%', '' | replace: 'x', '' | replace: '$', '' | strip | replace: ',', '' }}" data-count-suffix="{{ stat.value | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '.' | strip }}">
+            {{ stat.value }}
+          </span>
+        </div>
+        <p class="stat-label text-cloud/60">{{ stat.label }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     FEATURED CASE STUDIES
+     ════════════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="work-heading">
+  <div class="container-page">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16" data-animate>
+      <div class="max-w-2xl">
+        <span class="section-label">Our Work</span>
+        <h2 id="work-heading" class="section-title">Transforming Brands,<br>Delivering Results</h2>
+      </div>
+      <a href="/work" class="btn btn-ghost group">
+        View All Case Studies
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+    {% assign featured_cases = case_studies.case_studies | where: "featured", true %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {% for case in featured_cases limit:3 %}
+      <article class="case-study-card group cursor-pointer" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
+        <a href="/case-studies/{{ case.id }}" class="block relative h-80">
+          <img src="{{ case.image }}" alt="{{ case.title }}" loading="lazy" class="w-full h-full object-cover" width="600" height="400">
+          <div class="case-study-overlay"></div>
+          <div class="case-study-content">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-gold">{{ case.industry }}</span>
+              <span class="badge bg-white/15 text-cloud/80">{{ case.service | split: ' + ' | first }}</span>
+            </div>
+            <h3 class="font-display text-heading font-bold text-cloud mb-2">{{ case.client }}</h3>
+            <p class="text-body-sm text-cloud/60">{{ case.short_description | truncate: 100 }}</p>
+            <div class="flex gap-4 mt-4">
+              {% for result in case.results limit:3 %}
+              <div>
+                <p class="font-display text-heading-sm font-bold text-gold">{{ result.metric }}</p>
+                <p class="text-caption text-cloud/40">{{ result.label }}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     TESTIMONIALS
+     ════════════════════════════════════════════════════════════ -->
+<section class="section-dark relative overflow-hidden" aria-label="Client testimonials">
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-10">
+    <div class="absolute bottom-20 right-20 w-96 h-96 bg-gold/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container-page relative z-10">
+    <div class="text-center mb-16" data-animate>
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title-light">Trusted by Industry Leaders</h2>
+    </div>
+
+    <div data-testimonials-carousel class="relative max-w-4xl mx-auto" aria-roledescription="carousel" aria-label="Testimonials carousel">
+      <div class="overflow-hidden">
+        {% assign featured_testimonials = testimonials.testimonials | where: "featured", true %}
+        {% for testimonial in featured_testimonials %}
+        <div data-testimonial-slide role="group" aria-roledescription="slide" aria-label="Testimonial {{ forloop.index }} of {{ featured_testimonials.size }}" class="hidden">
+          <div class="testimonial-card text-center max-w-3xl mx-auto">
+            <blockquote class="text-body-lg md:text-heading-lg text-midnight/80 font-medium leading-relaxed mb-8 italic">
+              "{{ testimonial.quote }}"
+            </blockquote>
+            <div class="flex items-center justify-center gap-4">
+              <div class="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center">
+                <span class="font-display text-heading font-bold text-gold">{{ testimonial.author | slice: 0 }}</span>
+              </div>
+              <div class="text-left">
+                <cite class="font-display text-heading font-semibold not-italic text-midnight">{{ testimonial.author }}</cite>
+                <p class="text-body-sm text-midnight/50">{{ testimonial.role }}, {{ testimonial.company }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex items-center justify-center gap-4 mt-8">
+        <button data-carousel-prev class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-cloud hover:bg-gold hover:text-midnight transition-all" aria-label="Previous testimonial">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <div data-carousel-dots class="flex items-center gap-2"></div>
+        <button data-carousel-next class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-cloud hover:bg-gold hover:text-midnight transition-all" aria-label="Next testimonial">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     CTA SECTION
+     ════════════════════════════════════════════════════════════ -->
+<section class="section-gold relative overflow-hidden" aria-label="Call to action">
+  <div class="absolute inset-0 bg-noise opacity-10"></div>
+  <div class="container-page relative z-10 text-center">
+    <div data-animate>
+      <h2 class="font-display text-display-lg md:text-display-xl font-bold mb-6">
+        Ready to Engineer<br>
+        <span class="text-midnight">Your Growth Story?</span>
+      </h2>
+      <p class="text-body-lg text-midnight/70 max-w-2xl mx-auto mb-10">
+        Join 200+ brands that trust us to deliver measurable, 
+        sustainable growth. Let's build something extraordinary together.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="btn btn-secondary btn-lg">
+          Schedule a Discovery Call
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </a>
+        <a href="/work" class="btn btn-outline border-midnight/30 text-midnight hover:bg-midnight hover:text-cloud">
+          Browse Case Studies
+        </a>
+      </div>
+      <p class="mt-8 text-body-sm text-midnight/50">
+        No commitment required. 30-day satisfaction guarantee.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     TRUST BADGES
+     ════════════════════════════════════════════════════════════ -->
+<section class="section bg-cloud-dark/20">
+  <div class="container-page">
+    <div class="text-center mb-12" data-animate>
+      <span class="section-label">Recognition</span>
+      <h2 class="section-title">Award-Winning Excellence</h2>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12" data-animate>
+      {% for badge in trust_badges.trust_badges %}
+      <a href="{{ badge.url }}" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-100 transition-opacity" aria-label="{{ badge.name }}">
+        <img src="{{ badge.logo }}" alt="{{ badge.name }}" height="48" class="h-12 w-auto" loading="lazy">
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,184 @@
+# ── Case Studies ──────────────────────────────────────────
+case_studies:
+  - id: "lumina-health-digital-transformation"
+    client: "Lumina Health"
+    industry: "Health & Wellness"
+    service: "Growth Strategy + Digital Marketing"
+    title: "How We Helped Lumina Health Achieve 340% ROI in 12 Months"
+    short_description: "A comprehensive digital transformation that tripled revenue and established market leadership."
+    challenge: >
+      Lumina Health was a well-funded Series B healthtech company with an 
+      exceptional product but struggled to find product-market fit. Their 
+      customer acquisition costs were unsustainable ($850+ per customer), 
+      their brand was virtually unknown outside their home city, and their 
+      conversion funnel had critical drop-offs at every stage.
+    solution: >
+      We deployed our GrowthOS framework across three workstreams:
+      
+      1. Brand Transformation: Repositioned Lumina from "healthtech tool" 
+      to "wellness revolution" — complete with new visual identity, messaging 
+      architecture, and brand guidelines.
+      
+      2. Digital Experience: Rebuilt their website with a conversion-optimized 
+      architecture, achieving sub-2 second load times and a 92% accessibility 
+      score. Implemented personalized content journeys based on user behavior.
+      
+      3. Performance Marketing: Overhauled their paid media strategy with 
+      AI-powered bidding, creative testing at scale, and full-funnel attribution. 
+      Launched a content marketing program targeting 50+ high-intent keywords.
+    results:
+      - metric: "340%"
+        label: "ROI within 12 months"
+      - metric: "72%"
+        label: "Customer acquisition cost reduction"
+      - metric: "5.2x"
+        label: "Increase in organic traffic"
+      - metric: "3x"
+        label: "Conversion rate improvement"
+      - metric: "185%"
+        label: "Lead generation growth"
+    image: "/assets/images/case-studies/lumina-hero.jpg"
+    testimonial: >
+      "Apex didn't just grow our revenue — they transformed how we think about 
+      growth altogether. Their GrowthOS framework gave us a playbook that we 
+      still use daily."
+    testimonial_author: "Sarah Mitchell, CEO"
+    results_image: "/assets/images/case-studies/lumina-results.jpg"
+    tags: ["growth-strategy", "digital-marketing", "web-development"]
+    featured: true
+    order: 1
+
+  - id: "vantage-financial-brand-evolution"
+    client: "Vantage Financial"
+    industry: "Financial Services"
+    service: "Brand Development + Content Studio"
+    title: "Brand Evolution That Positioned Vantage as a Fintech Leader"
+    short_description: "Complete brand repositioning that increased market share by 42% in 18 months."
+    challenge: >
+      Vantage Financial had strong fundamentals — a solid product, loyal 
+      customers, and healthy margins — but their brand felt like a relic of 
+      the pre-digital era. Millennial and Gen-Z audiences perceived them as 
+      "old banking," and their content was failing to connect with a new 
+      generation of investors.
+    solution: >
+      We embarked on a comprehensive brand evolution:
+      
+      1. Strategic Positioning: Developed a new brand platform centered on 
+      "Intelligent Trust" — modernizing their image without sacrificing the 
+      credibility they'd built over 30 years.
+      
+      2. Visual Identity: Created a sophisticated new visual system with 
+      custom typography, a vibrant color palette, and dynamic data visualization 
+      language. Designed a new logo that bridged heritage and innovation.
+      
+      3. Content Studio: Launched an editorial platform producing daily 
+      financial insights, expert commentary, and original research. Within 
+      6 months, their content was syndicated on Bloomberg and Reuters.
+    results:
+      - metric: "42%"
+        label: "Market share increase"
+      - metric: "5M+"
+        label: "Monthly organic readers"
+      - metric: "89%"
+        label: "Brand favorability score"
+      - metric: "3x"
+        label: "Social media engagement"
+      - metric: "67%"
+        label: "Increase in young demo adoption"
+    image: "/assets/images/case-studies/vantage-hero.jpg"
+    testimonial: >
+      "We interviewed 12 agencies before choosing Apex. Two years later, that 
+      decision remains the best we've ever made."
+    testimonial_author: "Michael Torres, CMO"
+    results_image: "/assets/images/case-studies/vantage-results.jpg"
+    tags: ["brand-development", "content-studio"]
+    featured: true
+    order: 2
+
+  - id: "everest-retail-web-transformation"
+    client: "Everest Retail"
+    industry: "E-Commerce / Retail"
+    service: "Web & Product + Data & Analytics"
+    title: "Digital Experience Overhaul That Drove 220% Conversion Growth"
+    short_description: "Complete replatforming and UX redesign that transformed an e-commerce giant's digital presence."
+    challenge: >
+      Everest Retail's legacy e-commerce platform was crumbling under the 
+      weight of 10M+ monthly visitors. Page load times exceeded 8 seconds, 
+      mobile conversion was below 1%, and their analytics infrastructure 
+      couldn't provide real-time visibility into customer behavior.
+    solution: >
+      We executed a comprehensive digital transformation:
+      
+      1. Platform Migration: Moved from their legacy monolith to a headless 
+      commerce architecture, achieving sub-second page loads and 99.99% uptime.
+      
+      2. UX Redesign: Completely reimagined the shopping experience with 
+      personalized product discovery, streamlined checkout (reduced from 
+      6 steps to 2), and AI-powered recommendations.
+      
+      3. Analytics Hub: Built a real-time analytics platform unifying data 
+      from 25+ sources, providing instant visibility into every customer 
+      interaction and enabling predictive inventory management.
+    results:
+      - metric: "40%"
+        label: "Page load time reduction (LCP <1.5s)"
+      - metric: "220%"
+        label: "Conversion rate increase"
+      - metric: "185%"
+        label: "Mobile traffic growth"
+      - metric: "95%"
+        label: "Checkout completion rate"
+      - metric: "35%"
+        label: "Average order value increase"
+    image: "/assets/images/case-studies/everest-hero.jpg"
+    testimonial: >
+      "The team at Apex rebuilt our entire digital presence in 90 days. The 
+      results were staggering — they set a new bar for what we thought was possible."
+    testimonial_author: "Jennifer Wu, VP Digital"
+    results_image: "/assets/images/case-studies/everest-results.jpg"
+    tags: ["web-product", "data-analytics"]
+    featured: true
+    order: 3
+
+  - id: "novatech-b2b-growth-engine"
+    client: "NovaTech Solutions"
+    industry: "B2B SaaS"
+    service: "Growth Strategy + Digital Marketing"
+    title: "B2B Growth Engine That Delivered 12:1 ROAS in 6 Months"
+    short_description: "Data-driven B2B growth strategy that transformed a niche SaaS player into a category leader."
+    challenge: >
+      NovaTech had an exceptional B2B SaaS product but was lost in a sea of 
+      competitors. Their sales cycle was long (6-9 months), their content was 
+      generic, and they had no systematic approach to demand generation. 
+      Marketing and sales operated in silos with no shared metrics.
+    solution: >
+      We built a unified growth engine:
+      
+      1. ICP & Segmentation: Deep-dive analysis identified 3 high-value 
+      segments. Created personalized campaigns for each with tailored messaging.
+      
+      2. Content-Led Demand Gen: Launched an aggressive content program — 
+      original research reports, interactive ROI calculators, and executive 
+      briefing series. Repurposed across 12 channels.
+      
+      3. Sales-Marketing Alignment: Implemented a HubSpot-powered revenue 
+      operations stack with lead scoring, automated nurturing, and closed-loop 
+      reporting. Established shared KPIs and weekly alignment meetings.
+    results:
+      - metric: "12:1"
+        label: "Overall ROAS"
+      - metric: "60%"
+        label: "Sales cycle reduction"
+      - metric: "340%"
+        label: "Qualified lead increase"
+      - metric: "92%"
+        label: "Lead-to-opportunity conversion"
+      - metric: "45%"
+        label: "Customer acquisition cost decrease"
+    image: "/assets/images/case-studies/novatech-hero.jpg"
+    testimonial: "What sets Apex apart is their obsession with data. Every recommendation is backed by evidence."
+    testimonial_author: "Robert Klein, Director of Growth"
+    results_image: "/assets/images/case-studies/novatech-results.jpg"
+    tags: ["growth-strategy", "digital-marketing"]
+    featured: false
+    order: 4

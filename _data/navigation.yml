@@ -1,0 +1,105 @@
+# ── Main Navigation ───────────────────────────────────────
+main:
+  - label: "Home"
+    url: "/"
+    weight: 1
+
+  - label: "Services"
+    url: "/services"
+    weight: 2
+    children:
+      - label: "Growth Strategy"
+        url: "/services#growth-strategy"
+      - label: "Digital Marketing"
+        url: "/services#digital-marketing"
+      - label: "Brand Development"
+        url: "/services#brand-development"
+      - label: "Web & Product"
+        url: "/services#web-product"
+      - label: "Data & Analytics"
+        url: "/services#data-analytics"
+      - label: "Content Studio"
+        url: "/services#content-studio"
+
+  - label: "Our Work"
+    url: "/work"
+    weight: 3
+    children:
+      - label: "All Case Studies"
+        url: "/work"
+      - label: "Featured Projects"
+        url: "/work#featured"
+
+  - label: "About"
+    url: "/about"
+    weight: 4
+    children:
+      - label: "Our Story"
+        url: "/about#story"
+      - label: "Team"
+        url: "/about#team"
+      - label: "Values"
+        url: "/about#values"
+      - label: "Awards"
+        url: "/about#awards"
+      - label: "Careers"
+        url: "/about#careers"
+
+  - label: "Insights"
+    url: "/blog"
+    weight: 5
+    children:
+      - label: "All Articles"
+        url: "/blog"
+      - label: "Case Studies"
+        url: "/blog/category/case-studies"
+      - label: "Guides"
+        url: "/blog/category/guides"
+      - label: "News"
+        url: "/blog/category/news"
+
+  - label: "Contact"
+    url: "/contact"
+    weight: 6
+
+footer:
+  - column: "Services"
+    items:
+      - label: "Growth Strategy"
+        url: "/services#growth-strategy"
+      - label: "Digital Marketing"
+        url: "/services#digital-marketing"
+      - label: "Brand Development"
+        url: "/services#brand-development"
+      - label: "Web & Product"
+        url: "/services#web-product"
+      - label: "Data & Analytics"
+        url: "/services#data-analytics"
+      - label: "Content Studio"
+        url: "/services#content-studio"
+
+  - column: "Company"
+    items:
+      - label: "About"
+        url: "/about"
+      - label: "Our Work"
+        url: "/work"
+      - label: "Blog"
+        url: "/blog"
+      - label: "Careers"
+        url: "/about#careers"
+      - label: "Press Kit"
+        url: "/press-kit"
+
+  - column: "Support"
+    items:
+      - label: "Contact Us"
+        url: "/contact"
+      - label: "Privacy Policy"
+        url: "/privacy"
+      - label: "Terms of Service"
+        url: "/terms"
+      - label: "Cookie Policy"
+        url: "/cookies"
+      - label: "Accessibility"
+        url: "/accessibility"

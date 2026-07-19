@@ -1,0 +1,70 @@
+# ── Apex Agency — Global Site Configuration ───────────────
+name: "Apex Agency"
+tagline: "The world's most trusted growth partner for premium brands"
+short_description: "We engineer exponential growth for premium brands through data-driven strategy, creative excellence, and technological innovation."
+description: >
+  Apex Agency is a full-service growth partner for premium brands worldwide. 
+  We combine cutting-edge technology, creative brilliance, and strategic rigor 
+  to deliver measurable results that transform businesses. Founded in 2015, 
+  we've helped over 200 brands achieve an average 340% ROI within 12 months.
+
+url: "https://www.apexagency.com"
+email: "hello@apexagency.com"
+phone: "+1 (555) 123-4567"
+address:
+  line1: "200 Park Avenue South"
+  line2: "Suite 1500"
+  city: "New York"
+  state: "NY"
+  zip: "10003"
+  country: "USA"
+
+social:
+  linkedin: "https://linkedin.com/company/apexagency"
+  twitter: "https://twitter.com/apexagency"
+  instagram: "https://instagram.com/apexagency"
+  facebook: "https://facebook.com/apexagency"
+  youtube: "https://youtube.com/@apexagency"
+  dribbble: "https://dribbble.com/apexagency"
+
+analytics:
+  ga4_id: "G-XXXXXXXXXX"
+  gtm_id: "GTM-XXXXXXX"
+  clarity_id: "xxxxxxxxxx"
+
+brand:
+  primary_color: "#0A0B1E"
+  secondary_color: "#F7F7FA"
+  accent_color: "#D4AF37"
+  dark_secondary: "#1A1B3A"
+  medium: "#2D2F5E"
+  light: "#E8E8F0"
+  font_display: "Playfair Display"
+  font_body: "Inter"
+  logo_path: "/assets/images/logo.svg"
+  og_image: "/assets/images/og-default.jpg"
+  favicon: "/assets/images/favicon.ico"
+
+seo:
+  default_title: "Apex Agency — Growth Partner for Premium Brands"
+  default_description: "We engineer exponential growth for premium brands. Data-driven strategy, creative excellence, and technological innovation."
+  twitter_handle: "@apexagency"
+  og_site_name: "Apex Agency"
+
+legal:
+  company_name: "Apex Agency LLC"
+  registration_number: "XX-XXXXXXX"
+  vat_id: "XX-XXX-XXX"
+  privacy_email: "privacy@apexagency.com"
+  data_retention_days: 365
+  cookie_consent_version: "1.0"
+
+office_hours:
+  timezone: "America/New_York (EST/EDT)"
+  weekday: "9:00 AM — 7:00 PM"
+  saturday: "10:00 AM — 4:00 PM"
+  sunday: "Closed"
+
+calendly:
+  demo_url: "https://calendly.com/apexagency/discovery-call"
+  discovery_url: "https://calendly.com/apexagency/15min"

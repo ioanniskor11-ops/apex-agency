@@ -1,0 +1,174 @@
+---
+layout: default
+permalink: /case-studies/{{ case.id }}/
+pagination:
+  data: case_studies.case_studies
+  size: 1
+  alias: case
+permalink: "{{ case.url }}/"
+eleventyComputed:
+  title: "{{ case.title }} — Apex Agency"
+  description: "{{ case.short_description }}"
+  og_image: "{{ case.image }}"
+  schema_type: "Article"
+  jsonld:
+    "@context": "https://schema.org"
+    "@type": "Article"
+    headline: "{{ case.title }}"
+    description: "{{ case.short_description }}"
+    image: "{{ case.image }}"
+    author:
+      "@type": "Organization"
+      name: "Apex Agency"
+    publisher:
+      "@type": "Organization"
+      name: "Apex Agency"
+      logo:
+        "@type": "ImageObject"
+        url: "https://www.apexagency.com/assets/images/logo.svg"
+---
+
+{% assign case = case_studies.case_studies | where: "id", case.id | first %}
+
+<!-- ── Case Study Hero ──────────────────────────────── -->
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-midnight overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="{{ case.image }}" alt="" class="w-full h-full object-cover opacity-30" aria-hidden="true" loading="eager">
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/80 to-midnight/60"></div>
+  <div class="absolute inset-0 bg-noise"></div>
+
+  <div class="container-page relative z-10">
+    <div class="max-w-4xl">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="badge badge-gold">{{ case.industry }}</span>
+        <span class="text-cloud/40 text-caption">|</span>
+        {% assign services_list = case.service | split: ' + ' %}
+        {% for svc in services_list %}
+        <span class="badge bg-white/10 text-cloud/80">{{ svc }}</span>
+        {% endfor %}
+      </div>
+
+      <h1 class="font-display text-display-lg md:text-display-xl font-bold text-cloud leading-tight mb-6">
+        {{ case.title }}
+      </h1>
+      <p class="text-body-lg text-cloud/60 max-w-3xl">{{ case.short_description }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Results Banner ───────────────────────────────── -->
+<section class="relative -mt-12 z-20">
+  <div class="container-page">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 p-6 md:p-8 bg-cloud rounded-lg shadow-elevated">
+      {% for result in case.results %}
+      <div class="text-center" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
+        <p class="font-display text-display-lg font-bold text-gold">{{ result.metric }}</p>
+        <p class="text-body-sm text-midnight/50 mt-1">{{ result.label }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── Case Study Content ────────────────────────────── -->
+<section class="section">
+  <div class="container-page">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+      <!-- Main Content -->
+      <div class="lg:col-span-2" data-animate>
+        <!-- Challenge -->
+        <div class="mb-12">
+          <h2 class="font-display text-heading-xl font-bold mb-6 heading-with-accent">The Challenge</h2>
+          <div class="text-body text-midnight/70 leading-relaxed space-y-4">
+            {{ case.challenge | newline_to_br }}
+          </div>
+        </div>
+
+        <!-- Solution -->
+        <div class="mb-12">
+          <h2 class="font-display text-heading-xl font-bold mb-6 heading-with-accent">Our Solution</h2>
+          <div class="text-body text-midnight/70 leading-relaxed space-y-4">
+            {{ case.solution | newline_to_br }}
+          </div>
+        </div>
+
+        <!-- Results Image -->
+        {% if case.results_image %}
+        <div class="rounded-lg overflow-hidden shadow-elevated mb-12">
+          <img src="{{ case.results_image }}" alt="Results visualization for {{ case.client }}" loading="lazy" class="w-full">
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-1" data-animate data-delay="200">
+        <!-- Testimonial -->
+        {% if case.testimonial %}
+        <div class="p-6 rounded-lg bg-midnight text-cloud mb-8">
+          <svg class="w-8 h-8 text-gold/30 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+          </svg>
+          <blockquote class="text-body-sm italic text-cloud/80 leading-relaxed mb-4">
+            "{{ case.testimonial }}"
+          </blockquote>
+          <cite class="not-italic font-semibold text-caption text-gold">— {{ case.testimonial_author }}</cite>
+        </div>
+        {% endif %}
+
+        <!-- Client Details -->
+        <div class="p-6 rounded-lg bg-cloud-dark/50 mb-8">
+          <h3 class="font-display text-heading font-semibold mb-4">Client Details</h3>
+          <dl class="space-y-3">
+            <div>
+              <dt class="text-caption font-semibold uppercase tracking-wider text-midnight/50">Client</dt>
+              <dd class="text-body-sm font-medium">{{ case.client }}</dd>
+            </div>
+            <div>
+              <dt class="text-caption font-semibold uppercase tracking-wider text-midnight/50">Industry</dt>
+              <dd class="text-body-sm font-medium">{{ case.industry }}</dd>
+            </div>
+            <div>
+              <dt class="text-caption font-semibold uppercase tracking-wider text-midnight/50">Services</dt>
+              <dd class="text-body-sm font-medium">{{ case.service }}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- CTA -->
+        <div class="p-6 rounded-lg bg-gold/10 border border-gold/20">
+          <h3 class="font-display text-heading font-bold mb-3">Want Similar Results?</h3>
+          <p class="text-body-sm text-midnight/60 mb-6">Let's discuss how we can transform your brand.</p>
+          <a href="/contact" class="btn btn-primary w-full">
+            Start Your Growth Journey
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── Related Case Studies ──────────────────────────── -->
+{% assign related = case_studies.case_studies | where_exp: "item", "item.id != case.id" | where: "featured", true %}
+{% if related.size > 0 %}
+<section class="section bg-cloud-dark/30">
+  <div class="container-page">
+    <h2 class="font-display text-heading-xl font-bold mb-12" data-animate>More Case Studies</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      {% for related_case in related limit:2 %}
+      <article class="case-study-card group" data-animate>
+        <a href="/case-studies/{{ related_case.id }}" class="block relative h-64">
+          <img src="{{ related_case.image }}" alt="{{ related_case.client }}" loading="lazy" class="w-full h-full object-cover">
+          <div class="case-study-overlay"></div>
+          <div class="case-study-content">
+            <span class="badge badge-gold mb-2 inline-block">{{ related_case.industry }}</span>
+            <h3 class="font-display text-heading font-bold text-cloud">{{ related_case.client }}</h3>
+            <p class="text-body-sm text-cloud/60 mt-1">{{ related_case.short_description | truncate: 80 }}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

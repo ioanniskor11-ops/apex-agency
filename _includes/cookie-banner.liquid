@@ -1,0 +1,74 @@
+<!-- ── Cookie Consent Banner ───────────────────────────── -->
+<section data-cookie-banner class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-description">
+  <div class="container-page">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="flex-1 max-w-3xl">
+        <h3 class="font-display text-heading font-semibold mb-2">🍪 Cookie Preferences</h3>
+        <p id="cookie-description" class="text-body-sm text-cloud/60">
+          We use cookies and similar technologies to enhance your browsing experience, 
+          analyze site traffic, and serve personalized content. By clicking "Accept All," 
+          you consent to our use of cookies. 
+          <a href="/cookies" class="text-gold hover:underline">Learn more</a>.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3 flex-shrink-0">
+        <button data-cookie-reject class="btn btn-sm border border-white/20 text-cloud hover:bg-white/10 transition-colors">
+          Essential Only
+        </button>
+        <button data-cookie-accept class="btn btn-sm btn-primary">
+          Accept All
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Cookie Preferences Modal (hidden by default) ──── -->
+<div data-cookie-modal class="fixed inset-0 z-[60] hidden" role="dialog" aria-modal="true" aria-label="Cookie preferences">
+  <div class="absolute inset-0 bg-midnight/70 backdrop-blur-sm" data-cookie-modal-close></div>
+  <div class="relative z-10 max-w-lg mx-auto mt-20 p-8 bg-cloud rounded-lg shadow-deep">
+    <h3 class="font-display text-heading font-bold mb-6">Cookie Preferences</h3>
+    
+    <div class="space-y-4">
+      <label class="flex items-start gap-3 p-4 bg-white rounded-md">
+        <input type="checkbox" checked disabled class="mt-1 accent-gold">
+        <div>
+          <p class="font-medium text-body-sm">Essential</p>
+          <p class="text-caption text-midnight/50">Required for the website to function properly.</p>
+        </div>
+      </label>
+      
+      <label class="flex items-start gap-3 p-4 bg-white rounded-md">
+        <input type="checkbox" class="mt-1 accent-gold" checked>
+        <div>
+          <p class="font-medium text-body-sm">Analytics</p>
+          <p class="text-caption text-midnight/50">Help us understand how visitors use our site.</p>
+        </div>
+      </label>
+      
+      <label class="flex items-start gap-3 p-4 bg-white rounded-md">
+        <input type="checkbox" class="mt-1 accent-gold">
+        <div>
+          <p class="font-medium text-body-sm">Marketing</p>
+          <p class="text-caption text-midnight/50">Used for personalized advertising and content.</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="flex gap-3 mt-8">
+      <button class="btn btn-primary flex-1">Save Preferences</button>
+      <button data-cookie-modal-close class="btn btn-ghost">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal close handlers
+  document.querySelectorAll('[data-cookie-modal-close]').forEach(el => {
+    el.addEventListener('click', function() {
+      document.querySelector('[data-cookie-modal]').classList.add('hidden');
+    });
+  });
+});
+</script>

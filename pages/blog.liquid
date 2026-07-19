@@ -1,0 +1,144 @@
+---
+layout: blog
+title: "Insights — Apex Agency"
+description: "Expert perspectives on growth, strategy, and digital innovation from the Apex Agency team."
+permalink: /blog/
+pagination:
+  data: collections.posts
+  size: 9
+  alias: posts
+---
+
+<!-- ════════════════════════════════════════════════════════════
+     SEARCH & CATEGORIES
+     ════════════════════════════════════════════════════════════ -->
+<section class="section pt-8 md:pt-12">
+  <div class="container-page">
+    <!-- Search Bar -->
+    <div class="max-w-2xl mx-auto mb-8" data-animate>
+      <div class="relative">
+        <label for="blog-search" class="sr-only">Search articles</label>
+        <input id="blog-search" data-search-input type="search" 
+               class="w-full pl-12 pr-4 py-3.5 bg-white border-2 border-cloud-dark rounded-sm text-body 
+                      placeholder:text-midnight/30 focus:border-gold focus:outline-none transition-all"
+               placeholder="Search articles..." autocomplete="off">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-midnight/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+      <div data-search-results class="mt-2 bg-white rounded-lg shadow-elevated hidden"></div>
+    </div>
+
+    <!-- Categories -->
+    {% assign categories = "All Articles,case-studies:Case Studies,guides:Guides,news:News,growth-strategy:Growth Strategy,digital-marketing:Digital Marketing,brand-development:Brand Development" | split: "," %}
+    <div class="flex flex-wrap justify-center gap-3 mb-12" data-animate>
+      {% for category in categories %}
+      {% assign cat_parts = category | split: ":" %}
+      <a href="{% if cat_parts[0] == 'All Articles' %}/blog{% else %}/blog/category/{{ cat_parts[0] }}{% endif %}" 
+         class="px-5 py-2.5 rounded-sm text-body-sm font-medium transition-all
+                {% if page.url == '/blog/' and cat_parts[0] == 'All Articles' or page.url contains cat_parts[0] %}
+                bg-midnight text-cloud
+                {% else %}
+                bg-transparent text-midnight hover:bg-midnight/5
+                {% endif %}">
+        {{ cat_parts[1] | default: cat_parts[0] }}
+      </a>
+      {% endfor %}
+    </div>
+
+    <!-- Blog Grid -->
+    {% if pagination.pageItems.size > 0 %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {% for post in pagination.pageItems %}
+      <article class="group bg-white rounded-lg shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
+        <a href="{{ post.url }}" class="block">
+          <!-- Thumbnail -->
+          <div class="aspect-[16/10] bg-midnight overflow-hidden">
+            {% if post.data.thumbnail %}
+            <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="250">
+            {% else %}
+            <div class="w-full h-full bg-gradient-to-br from-midnight-light to-midnight flex items-center justify-center">
+              <span class="font-display text-display-lg text-gold/30">{{ post.data.title | slice: 0 }}</span>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="badge badge-gold">{{ post.data.category | default: "Insights" }}</span>
+              <span class="text-caption text-midnight/40">{{ post.date | date_short }}</span>
+            </div>
+            <h2 class="font-display text-heading font-semibold group-hover:text-gold transition-colors mb-2">
+              {{ post.data.title }}
+            </h2>
+            <p class="text-body-sm text-midnight/50 line-clamp-2">
+              {{ post.data.excerpt | default: post.content | truncate: 120 }}
+            </p>
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-cloud-dark/50">
+              <div class="flex items-center gap-2">
+                {% if post.data.author %}
+                <div class="w-7 h-7 rounded-full bg-gold/20 flex items-center justify-center">
+                  <span class="text-caption font-bold text-gold">{{ post.data.author | slice: 0 }}</span>
+                </div>
+                <span class="text-caption text-midnight/50">{{ post.data.author }}</span>
+                {% endif %}
+              </div>
+              <span class="text-caption text-midnight/40">{{ post.content | reading_time }}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if pagination.pageItems.size >= pagination.size or pagination.pageNumber > 0 %}
+    <nav class="flex justify-center items-center gap-4 mt-16" aria-label="Blog pagination">
+      {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="btn btn-ghost">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+        </svg>
+        Previous
+      </a>
+      {% endif %}
+
+      <div class="flex items-center gap-2">
+        {% for page_entry in pagination.pages %}
+        {% assign page_num = forloop.index0 %}
+        <a href="{{ pagination.hrefs[page_num] }}" 
+           class="w-10 h-10 rounded-sm flex items-center justify-center text-body-sm font-medium transition-all
+                  {% if page_num == pagination.pageNumber %}
+                  bg-midnight text-cloud
+                  {% else %}
+                  text-midnight hover:bg-midnight/5
+                  {% endif %}">
+          {{ forloop.index }}
+        </a>
+        {% endfor %}
+      </div>
+
+      {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="btn btn-ghost">
+        Next
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      {% endif %}
+    </nav>
+    {% endif %}
+
+    {% else %}
+    <!-- Empty state -->
+    <div class="text-center py-16">
+      <svg class="w-16 h-16 mx-auto text-midnight/20 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+      </svg>
+      <h3 class="font-display text-heading-xl font-bold mb-4">No articles yet</h3>
+      <p class="text-body text-midnight/50">Check back soon for our latest insights.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

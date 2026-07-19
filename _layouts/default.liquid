@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- ── Preconnect ────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.ctfassets.net" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- ── DNS Prefetch ───────────────────────────────────── -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <!-- ── Title & Meta ──────────────────────────────────── -->
+  <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.seo.default_title }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description | escape }}{% else %}{{ site.seo.default_description | escape }}{% endif %}">
+  <meta name="keywords" content="{% if keywords %}{{ keywords }}{% else %}growth agency, marketing agency, digital strategy, brand development, premium brands{% endif %}">
+  <meta name="author" content="{{ site.name }}">
+  <meta name="robots" content="{% if noindex %}noindex, nofollow{% else %}index, follow{% endif %}">
+
+  <!-- ── Canonical ─────────────────────────────────────── -->
+  <link rel="canonical" href="{% if canonical %}{{ canonical }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
+
+  <!-- ── Open Graph ─────────────────────────────────────── -->
+  <meta property="og:type" content="{% if og_type %}{{ og_type }}{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if og_title %}{{ og_title | escape }}{% else %}{{ title | default: site.seo.default_title | escape }}{% endif %}">
+  <meta property="og:description" content="{% if og_description %}{{ og_description | escape }}{% else %}{{ description | default: site.seo.default_description | escape }}{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.seo.og_site_name }}">
+  <meta property="og:image" content="{% if og_image %}{{ og_image }}{% else %}{{ site.url }}{{ site.brand.og_image }}{% endif %}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ── Twitter Card ──────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{ site.seo.twitter_handle }}">
+  <meta name="twitter:creator" content="{{ site.seo.twitter_handle }}">
+  <meta name="twitter:title" content="{% if og_title %}{{ og_title | escape }}{% else %}{{ title | default: site.seo.default_title | escape }}{% endif %}">
+  <meta name="twitter:description" content="{% if og_description %}{{ og_description | escape }}{% else %}{{ description | default: site.seo.default_description | escape }}{% endif %}">
+  <meta name="twitter:image" content="{% if og_image %}{{ og_image }}{% else %}{{ site.url }}{{ site.brand.og_image }}{% endif %}">
+
+  <!-- ── Icons ──────────────────────────────────────────── -->
+  <link rel="icon" type="image/x-icon" href="{{ site.brand.favicon }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- ── Theme Color ────────────────────────────────────── -->
+  <meta name="theme-color" content="{{ site.brand.primary_color }}">
+  <meta name="msapplication-TileColor" content="{{ site.brand.primary_color }}">
+
+  <!-- ── Styles (Critical CSS inlined, full loaded async) ── -->
+  <style>
+    {% include "assets/css/critical.css" %}
+  </style>
+  <link rel="preload" href="/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
+
+  <!-- ── Schema.org / JSON-LD ───────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% if schema_type %}{{ schema_type }}{% else %}Organization{% endif %}",
+    "name": "{{ site.name }}",
+    "description": "{{ site.short_description | escape }}",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}{{ site.brand.logo_path }}",
+    "email": "{{ site.email }}",
+    "telephone": "{{ site.phone }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.address.line1 }}",
+      "addressLocality": "{{ site.address.city }}",
+      "addressRegion": "{{ site.address.state }}",
+      "postalCode": "{{ site.address.zip }}",
+      "addressCountry": "{{ site.address.country }}"
+    },
+    "sameAs": [
+      "{{ site.social.linkedin }}",
+      "{{ site.social.twitter }}",
+      "{{ site.social.instagram }}",
+      "{{ site.social.facebook }}",
+      "{{ site.social.youtube }}"
+    ]
+  }
+  </script>
+
+  {% if jsonld %}
+  <script type="application/ld+json">{{ jsonld | jsonld | safe }}</script>
+  {% endif %}
+
+  <!-- ── Security Meta ──────────────────────────────────── -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://images.ctfassets.net https://*.cloudinary.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.apexagency.com https://hcaptcha.com https://*.hcaptcha.com; frame-src https://hcaptcha.com https://*.hcaptcha.com https://calendly.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests;">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- GA4 Measurement ID (hidden, used by analytics) -->
+  {% if site.analytics.ga4_id %}
+  <meta name="ga4-id" content="{{ site.analytics.ga4_id }}">
+  {% endif %}
+
+  {% if site.analytics.gtm_id %}
+  <meta name="gtm-id" content="{{ site.analytics.gtm_id }}">
+  {% endif %}
+</head>
+<body class="flex flex-col min-h-screen">
+  <!-- ── Skip to content (accessibility) ────────────────── -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── Header ────────────────────────────────────────── -->
+  {% render 'header' %}
+
+  <!-- ── Mobile Menu Overlay ────────────────────────────── -->
+  <div data-mobile-overlay class="fixed inset-0 z-30 bg-midnight/50 backdrop-blur-sm hidden" aria-hidden="true"></div>
+
+  <!-- ── Main Content ──────────────────────────────────── -->
+  <main id="main-content" class="flex-1">
+    {{ content }}
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────────── -->
+  {% render 'footer' %}
+
+  <!-- ── Cookie Consent Banner ──────────────────────────── -->
+  {% render 'cookie-banner' %}
+
+  <!-- ── Scripts ────────────────────────────────────────── -->
+  <script src="/assets/js/main.js" defer></script>
+
+  <!-- ── hCaptcha (if enabled) ──────────────────────────── -->
+  {% if site.hcaptcha_sitekey %}
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
+  {% endif %}
+
+  <!-- ── Google Tag Manager (noscript) ──────────────────── -->
+  {% if site.analytics.gtm_id %}
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ site.analytics.gtm_id }}"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  {% endif %}
+</body>
+</html>

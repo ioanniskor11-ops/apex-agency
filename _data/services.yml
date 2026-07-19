@@ -1,0 +1,220 @@
+# ── Services ──────────────────────────────────────────────
+services:
+  - id: "growth-strategy"
+    icon: "chart-line"
+    title: "Growth Strategy"
+    short_description: "Data-driven roadmaps that achieve 3x+ ROI within 12 months."
+    description: >
+      Our proprietary GrowthOS™ framework combines market intelligence, 
+      competitive analysis, and predictive modeling to build strategies 
+      that deliver measurable, sustainable growth. We don't just plan — 
+      we execute, optimize, and scale alongside your team.
+    results:
+      - metric: "340%"
+        label: "Average 12-month ROI"
+      - metric: "2.4x"
+        label: "Revenue acceleration"
+      - metric: "92%"
+        label: "Client retention rate"
+    methodology:
+      - "Deep-dive market intelligence & competitor analysis"
+      - "Data-driven opportunity sizing & prioritization"
+      - "Custom GrowthOS™ roadmap development"
+      - "Agile execution with weekly sprint reviews"
+      - "Continuous optimization & scaling"
+    cta_text: "Build Your Growth Strategy"
+    cta_url: "/contact?service=growth-strategy"
+    featured: true
+
+  - id: "digital-marketing"
+    icon: "megaphone"
+    title: "Digital Marketing"
+    short_description: "Omnichannel campaigns that captivate, convert, and retain."
+    description: >
+      From paid acquisition to organic content, we orchestrate integrated 
+      campaigns across every channel that matters. Our AI-powered attribution 
+      models ensure every dollar is optimized for maximum impact.
+    results:
+      - metric: "12:1"
+        label: "Average ROAS"
+      - metric: "185%"
+        label: "Lead generation lift"
+      - metric: "3.2x"
+        label: "Engagement rate increase"
+    methodology:
+      - "Full-funnel strategy & audience segmentation"
+      - "Multi-channel campaign orchestration"
+      - "AI-powered bid management & optimization"
+      - "Creative testing at scale"
+      - "Real-time attribution & reporting"
+    cta_text: "Amplify Your Reach"
+    cta_url: "/contact?service=digital-marketing"
+    featured: true
+
+  - id: "brand-development"
+    icon: "paint-brush"
+    title: "Brand Development"
+    short_description: "Iconic brand identities that command premium positioning."
+    description: >
+      We craft brand experiences that transcend the visual — weaving together 
+      strategy, identity, voice, and emotion to create brands that people 
+      remember, trust, and advocate for.
+    results:
+      - metric: "67%"
+        label: "Brand recall improvement"
+      - metric: "4.5x"
+        label: "Customer LTV increase"
+      - metric: "89%"
+        label: "NPS score among clients"
+    methodology:
+      - "Brand audit & competitive landscape analysis"
+      - "Strategic positioning & brand architecture"
+      - "Visual identity system design"
+      - "Voice & tone development"
+      - "Brand guidelines & asset creation"
+    cta_text: "Define Your Identity"
+    cta_url: "/contact?service=brand-development"
+    featured: true
+
+  - id: "web-product"
+    icon: "code"
+    title: "Web & Product"
+    short_description: "High-performance digital experiences built for conversion."
+    description: >
+      We design and develop digital products that blend breathtaking design 
+      with rock-solid engineering. Every pixel is purposeful, every interaction 
+      intentional, and every page optimized for speed, accessibility, and conversion.
+    results:
+      - metric: "250ms"
+        label: "Average LCP under"
+      - metric: "99.9%"
+        label: "Uptime guarantee"
+      - metric: "40%+"
+        label: "Conversion improvement"
+    methodology:
+      - "User research & experience strategy"
+      - "Rapid prototyping & user testing"
+      - "Figma-to-code design system"
+      - "Performance-first development"
+      - "Accessibility (WCAG 2.1 AA+) compliance"
+    cta_text: "Build Your Digital Experience"
+    cta_url: "/contact?service=web-product"
+    featured: true
+
+  - id: "data-analytics"
+    icon: "chart-bar"
+    title: "Data & Analytics"
+    short_description: "Actionable intelligence that powers confident decisions."
+    description: >
+      In a world of data noise, we deliver signal. Our analytics practice 
+      transforms raw data into strategic narratives, connecting every metric 
+      to business outcomes and providing real-time dashboards that drive action.
+    results:
+      - metric: "15+"
+        label: "Data sources integrated"
+      - metric: "94%"
+        label: "Forecast accuracy"
+      - metric: "3x"
+        label: "Faster decision-making"
+    methodology:
+      - "Data architecture & pipeline engineering"
+      - "Custom dashboard & visualization development"
+      - "Predictive modeling & forecasting"
+      - "Cohort analysis & attribution modeling"
+      - "Automated reporting & alerts"
+    cta_text: "Unlock Your Data"
+    cta_url: "/contact?service=data-analytics"
+    featured: false
+
+  - id: "content-studio"
+    icon: "pen-fancy"
+    title: "Content Studio"
+    short_description: "Storytelling that builds authority, trust, and demand."
+    description: >
+      Our content studio produces premium narratives across every medium — 
+      from long-form thought leadership to viral short-form video. Every piece 
+      is researched, written, and designed to establish authority and drive action.
+    results:
+      - metric: "350+"
+        label: "Articles published annually"
+      - metric: "5M+"
+        label: "Organic monthly readers"
+      - metric: "22x"
+        label: "Content-driven ROAS"
+    methodology:
+      - "Topic clustering & SEO strategy"
+      - "Expert interviews & original research"
+      - "Multi-format content production"
+      - "Distribution & amplification strategy"
+      - "Performance analysis & iteration"
+    cta_text: "Start Your Story"
+    cta_url: "/contact?service=content-studio"
+    featured: false
+
+pricing_tiers:
+  - name: "Growth"
+    subtitle: "For emerging brands ready to scale"
+    price: "$5,000"
+    period: "/month"
+    description: "Essential growth services for brands taking their next big leap."
+    features:
+      - "Growth strategy & quarterly planning"
+      - "3-channel marketing execution"
+      - "Monthly performance reports"
+      - "Dedicated account manager"
+      - "Standard SLA (48h response)"
+    cta_text: "Get Started"
+    cta_url: "/contact?plan=growth"
+    featured: false
+
+  - name: "Accelerate"
+    subtitle: "For established brands seeking rapid growth"
+    price: "$12,000"
+    period: "/month"
+    description: "Comprehensive services for brands ready to dominate their market."
+    features:
+      - "All Growth features, plus:"
+      - "Full omnichannel strategy & execution"
+      - "Custom analytics dashboard"
+      - "Priority support (24h response)"
+      - "Monthly strategy workshop"
+      - "Dedicated creative team"
+    cta_text: "Most Popular"
+    cta_url: "/contact?plan=accelerate"
+    featured: true
+
+  - name: "Enterprise"
+    subtitle: "For market leaders and Fortune 500 brands"
+    price: "Custom"
+    period: ""
+    description: "Fully bespoke partnerships for the world's most ambitious brands."
+    features:
+      - "All Accelerate features, plus:"
+      - "Chief Growth Officer advisory"
+      - "Real-time executive dashboard"
+      - "24/7 priority support"
+      - "Weekly strategic reviews"
+      - "Dedicated team of 10+ specialists"
+      - "Custom technology development"
+    cta_text: "Contact Us"
+    cta_url: "/contact?plan=enterprise"
+    featured: false
+
+faq:
+  - question: "What industries do you specialize in?"
+    answer: "We work across premium B2B and B2C verticals including fintech, health & wellness, luxury lifestyle, SaaS, professional services, and e-commerce. Our sweet spot is brands with $5M-$500M in revenue seeking to accelerate growth."
+
+  - question: "How quickly can we expect to see results?"
+    answer: "While every engagement is unique, our clients typically see meaningful improvements within 60-90 days. By the 12-month mark, our average client achieves a 340% ROI. We set clear milestones and provide transparent reporting from day one."
+
+  - question: "How do you measure success?"
+    answer: "We establish clear KPIs aligned with your business objectives before engagement begins. Our custom dashboards provide real-time visibility into performance metrics, and we conduct monthly strategic reviews to ensure we're exceeding targets."
+
+  - question: "Can you work with our existing team?"
+    answer: "Absolutely. We operate as a seamless extension of your team. Our engagement models range from fully managed services to co-creation partnerships where we collaborate with your in-house teams for maximum knowledge transfer and capability building."
+
+  - question: "What is your engagement process?"
+    answer: "Our process begins with a comprehensive discovery phase (1-2 weeks), followed by strategy development, implementation, and ongoing optimization. We use agile methodologies with weekly sprints and bi-weekly stakeholder reviews."
+
+  - question: "Do you offer flexible contract terms?"
+    answer: "Yes. We offer month-to-month, quarterly, and annual engagements. Annual commitments receive preferential pricing. All contracts include a 30-day satisfaction guarantee — if you're not delighted, you don't pay."

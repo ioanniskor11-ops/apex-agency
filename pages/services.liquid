@@ -1,0 +1,214 @@
+---
+layout: page
+title: "Services — Apex Agency"
+description: "Full-service growth partner offering strategy, marketing, brand development, web & product, data analytics, and content studio."
+permalink: /services/
+page_label: "What We Do"
+page_subtitle: "Six interconnected practices. One unified growth engine."
+---
+
+<!-- ════════════════════════════════════════════════════════════
+     SERVICE GRID (Full)
+     ════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container-page">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      {% for service in services.services %}
+      <article id="{{ service.id }}" class="relative p-8 md:p-10 rounded-lg bg-white shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 scroll-mt-24" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
+        <div class="flex items-start gap-6">
+          <div class="w-16 h-16 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+            {% case service.icon %}
+            {% when 'chart-line' %}
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+            </svg>
+            {% when 'megaphone' %}
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+            </svg>
+            {% when 'paint-brush' %}
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+            {% when 'code' %}
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+            {% when 'chart-bar' %}
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+            {% when 'pen-fancy' %}
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+            </svg>
+            {% endcase %}
+          </div>
+          <div class="flex-1">
+            <h2 class="font-display text-heading-xl font-bold mb-4">{{ service.title }}</h2>
+            <p class="text-body text-midnight/70 leading-relaxed mb-6">{{ service.description | newline_to_br }}</p>
+
+            <!-- Methodology -->
+            <div class="mb-6">
+              <h3 class="font-body font-semibold text-caption uppercase tracking-widest text-gold mb-3">Our Approach</h3>
+              <ul class="space-y-2">
+                {% for step in service.methodology %}
+                <li class="flex items-start gap-3 text-body-sm text-midnight/60">
+                  <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {{ step }}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <!-- Results -->
+            <div class="grid grid-cols-3 gap-4 mb-6 p-4 rounded-lg bg-cloud-dark/30">
+              {% for result in service.results %}
+              <div class="text-center">
+                <p class="font-display text-heading font-bold text-gold">{{ result.metric }}</p>
+                <p class="text-caption text-midnight/50">{{ result.label }}</p>
+              </div>
+              {% endfor %}
+            </div>
+
+            <a href="{{ service.cta_url }}" class="btn btn-primary">
+              {{ service.cta_text }}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     METHODOLOGY SECTION
+     ════════════════════════════════════════════════════════════ -->
+<section class="section-dark relative overflow-hidden">
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="container-page relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+      <span class="section-label">Our Methodology</span>
+      <h2 class="section-title-light">The GrowthOS™ Framework</h2>
+      <p class="section-desc section-desc-light mx-auto">
+        A proven, repeatable system for engineering exponential growth.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto" data-animate>
+      {% assign methodology_steps = "Discovery & Audit|Strategy & Roadmap|Design & Build|Launch & Optimize|Scale & Sustain" | split: "|" %}
+      {% assign methodology_descriptions = "Deep-dive analysis of your market, competition, customers, and current performance to identify opportunities and gaps." | split: "|" %}
+      
+      <div class="space-y-0">
+        {% for step in methodology_steps %}
+        <div class="timeline-item">
+          <div class="bg-cloud/5 rounded-lg p-6 md:p-8">
+            <span class="inline-block px-3 py-1 bg-gold/15 text-gold text-caption font-bold rounded-sm mb-3">Phase {{ forloop.index }}</span>
+            <h3 class="font-display text-heading-lg font-bold text-cloud mb-3">{{ step }}</h3>
+            <p class="text-body-sm text-cloud/50">
+              {% if forloop.first %}
+              Comprehensive market intelligence, competitive analysis, customer research, and performance audit to establish a data-driven baseline.
+              {% elsif forloop.index == 2 %}
+              Strategic roadmap development with clear KPIs, milestone planning, resource allocation, and risk assessment aligned to your growth objectives.
+              {% elsif forloop.index == 3 %}
+              Creative development, technical architecture, content production, and system integration executed in agile sprints with continuous stakeholder feedback.
+              {% elsif forloop.index == 4 %}
+              Controlled rollout with A/B testing, performance monitoring, real-time optimization, and iterative refinement based on data insights.
+              {% else %}
+              Systems and processes for sustained growth: knowledge transfer, capability building, automated reporting, and strategic evolution.
+              {% endif %}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     PRICING TIERS
+     ════════════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="pricing-heading">
+  <div class="container-page">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+      <span class="section-label">Pricing</span>
+      <h2 id="pricing-heading" class="section-title">Flexible Partnerships,<br>Predictable Investment</h2>
+      <p class="section-desc mx-auto">
+        Every engagement is tailored to your unique needs. Choose the model 
+        that fits your ambition, or let's design something completely custom.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-animate>
+      {% for tier in services.pricing_tiers %}
+      <div class="pricing-card {% if tier.featured %}featured{% endif %}">
+        {% if tier.featured %}
+        <span class="pricing-badge">Most Popular</span>
+        {% endif %}
+        
+        <h3 class="font-display text-heading-xl font-bold">{{ tier.name }}</h3>
+        <p class="text-body-sm text-midnight/50 mt-2">{{ tier.subtitle }}</p>
+        
+        <div class="mt-6 mb-8">
+          <span class="font-display text-display-lg font-bold">{{ tier.price }}</span>
+          {% if tier.period %}
+          <span class="text-body-sm text-midnight/40">{{ tier.period }}</span>
+          {% endif %}
+        </div>
+
+        <p class="text-body-sm text-midnight/60 mb-6">{{ tier.description }}</p>
+
+        <ul class="space-y-3 mb-8">
+          {% for feature in tier.features %}
+          <li class="flex items-start gap-3 text-body-sm">
+            <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            {{ feature }}
+          </li>
+          {% endfor %}
+        </ul>
+
+        <a href="{{ tier.cta_url }}" class="btn w-full {% if tier.featured %}btn-primary{% else %}btn-outline{% endif %}">
+          {{ tier.cta_text }}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     FAQ
+     ════════════════════════════════════════════════════════════ -->
+<section class="section bg-cloud-dark/30">
+  <div class="container-page">
+    <div class="max-w-3xl mx-auto" data-animate>
+      <div class="text-center mb-12">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      {% for faq in services.faq %}
+      <div data-faq-item class="border-b border-cloud-dark {% if forloop.first %}active{% endif %}">
+        <button data-faq-question class="w-full flex items-center justify-between py-5 text-left font-display text-heading font-semibold hover:text-gold transition-colors" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+          <span>{{ faq.question }}</span>
+          <svg data-faq-toggle class="w-5 h-5 text-gold transition-transform duration-300 {% if forloop.first %}rotate-180{% endif %}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div data-faq-answer class="pb-5 {% unless forloop.first %}hidden{% endunless %}" {% unless forloop.first %}hidden{% endunless %}>
+          <p class="text-body text-midnight/60 leading-relaxed">{{ faq.answer }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

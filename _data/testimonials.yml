@@ -1,0 +1,94 @@
+# ── Testimonials ──────────────────────────────────────────
+testimonials:
+  - quote: >
+      "Apex didn't just grow our revenue — they transformed how we think about 
+      growth altogether. Their GrowthOS framework gave us a playbook that we 
+      still use daily. The 3x ROI in the first year was just the beginning."
+    author: "Sarah Mitchell"
+    role: "CEO"
+    company: "Lumina Health"
+    company_logo: "/assets/images/clients/lumina.svg"
+    featured: true
+    order: 1
+
+  - quote: >
+      "We interviewed 12 agencies before choosing Apex. Two years later, that 
+      decision remains the best we've ever made. They're not vendors — they're 
+      true strategic partners who care as much about our success as we do."
+    author: "Michael Torres"
+    role: "Chief Marketing Officer"
+    company: "Vantage Financial"
+    company_logo: "/assets/images/clients/vantage.svg"
+    featured: true
+    order: 2
+
+  - quote: >
+      "The team at Apex rebuilt our entire digital presence in 90 days. The 
+      results were staggering — 185% more traffic, 220% more conversions, 
+      and a 40% reduction in page load time. They set a new bar for what we 
+      thought was possible."
+    author: "Jennifer Wu"
+    role: "VP Digital"
+    company: "Everest Retail"
+    company_logo: "/assets/images/clients/everest.svg"
+    featured: true
+    order: 3
+
+  - quote: >
+      "What sets Apex apart is their obsession with data. Every recommendation 
+      is backed by evidence, every campaign is measured against clear KPIs, 
+      and they're always transparent about what's working and what needs 
+      adjustment. Absolute dream partners."
+    author: "Robert Klein"
+    role: "Director of Growth"
+    company: "NovaTech Solutions"
+    company_logo: "/assets/images/clients/novatech.svg"
+    featured: false
+    order: 4
+
+  - quote: >
+      "Their content studio produced the best thought leadership campaign 
+      we've ever run. Our CEO is now regularly featured in Forbes, TechCrunch, 
+      and Bloomberg — all organic, all driven by Apex's editorial strategy."
+    author: "Amara Osei"
+    role: "Head of Brand"
+    company: "Pinnacle Ventures"
+    company_logo: "/assets/images/clients/pinnacle.svg"
+    featured: false
+    order: 5
+
+  - quote: >
+      "We were skeptical about hiring an external agency. Apex proved us wrong 
+      from day one. They integrated seamlessly with our team, respected our 
+      culture, and delivered work that exceeded every expectation."
+    author: "Daniel Park"
+    role: "SVP Marketing"
+    company: "Atlas Commerce"
+    company_logo: "/assets/images/clients/atlas.svg"
+    featured: false
+    order: 6
+
+stats:
+  - value: "200+"
+    label: "Brands Transformed"
+    icon: "building"
+
+  - value: "$2.4B"
+    label: "Revenue Generated for Clients"
+    icon: "dollar-sign"
+
+  - value: "340%"
+    label: "Average ROI in 12 Months"
+    icon: "chart-line"
+
+  - value: "98%"
+    label: "Client Satisfaction Rate"
+    icon: "star"
+
+  - value: "50+"
+    label: "Industry Awards"
+    icon: "trophy"
+
+  - value: "15+"
+    label: "Countries Served"
+    icon: "globe"

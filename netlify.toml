@@ -1,0 +1,55 @@
+# ── Apex Agency — Netlify Deployment Config ─────────────────
+[build]
+  command = "npm run build:frontend"
+  publish = "_site"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_ENV = "production"
+
+[dev]
+  framework = "eleventy"
+  command = "npm run dev:frontend"
+  port = 8080
+  target_port = 8080
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.googletagmanager.com https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://images.ctfassets.net https://*.cloudinary.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.apexagency.com https://hcaptcha.com https://*.hcaptcha.com; frame-src https://hcaptcha.com https://*.hcaptcha.com https://calendly.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests;"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
+
+[[redirects]]
+  from = "/cases"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/insights"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/api/:splat"
+  status = 200
+  conditions = {Path = ["/api/*"]}

@@ -1,0 +1,63 @@
+---
+layout: work
+title: "Our Work — Apex Agency"
+description: "Explore our portfolio of transformative digital experiences for premium brands worldwide."
+permalink: /work/
+---
+
+<!-- ════════════════════════════════════════════════════════════
+     FILTER CONTROLS
+     ════════════════════════════════════════════════════════════ -->
+<section class="section pt-8 md:pt-12">
+  <div class="container-page">
+    <div data-filter-container class="flex flex-wrap gap-3 mb-12" role="tablist" aria-label="Filter case studies">
+      <button data-filter-btn="all" class="px-5 py-2.5 rounded-sm text-body-sm font-medium bg-midnight text-cloud transition-all" role="tab" aria-selected="true">
+        All Projects
+      </button>
+      {% assign all_tags = "" %}
+      {% for case in case_studies.case_studies %}
+        {% for tag in case.tags %}
+          {% unless all_tags contains tag %}
+            {% capture all_tags %}{{ all_tags }},{{ tag }}{% endcapture %}
+          {% endunless %}
+        {% endfor %}
+      {% endfor %}
+      {% assign tag_labels = "growth-strategy:Growth Strategy,digital-marketing:Digital Marketing,brand-development:Brand Development,web-product:Web & Product,data-analytics:Data & Analytics,content-studio:Content Studio" | split: "," %}
+      {% for tag_entry in tag_labels %}
+        {% assign tag_parts = tag_entry | split: ":" %}
+        <button data-filter-btn="{{ tag_parts[0] }}" class="px-5 py-2.5 rounded-sm text-body-sm font-medium bg-transparent text-midnight hover:bg-midnight/5 transition-all" role="tab" aria-selected="false">
+          {{ tag_parts[1] }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      {% for case in case_studies.case_studies %}
+      <article data-filter-item="{{ case.tags | join: ',' }}" class="case-study-card group transition-all duration-300" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
+        <a href="/case-studies/{{ case.id }}" class="block relative h-[400px] md:h-[500px]">
+          <img src="{{ case.image }}" alt="{{ case.client }}" loading="lazy" class="w-full h-full object-cover" width="600" height="500">
+          <div class="case-study-overlay"></div>
+          <div class="case-study-content">
+            <div class="flex flex-wrap items-center gap-2 mb-3">
+              <span class="badge badge-gold">{{ case.industry }}</span>
+              {% assign first_service = case.service | split: ' + ' | first %}
+              <span class="badge bg-white/15 text-cloud/80">{{ first_service }}</span>
+            </div>
+            <h2 class="font-display text-heading-xl font-bold text-cloud mb-2">{{ case.client }}</h2>
+            <p class="text-body-sm text-cloud/60 mb-4">{{ case.short_description | truncate: 120 }}</p>
+            <div class="flex flex-wrap gap-4">
+              {% for result in case.results limit:3 %}
+              <div>
+                <p class="font-display text-heading font-bold text-gold">{{ result.metric }}</p>
+                <p class="text-caption text-cloud/40">{{ result.label }}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

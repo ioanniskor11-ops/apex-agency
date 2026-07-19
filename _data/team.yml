@@ -1,0 +1,194 @@
+# ── Team Members ──────────────────────────────────────────
+team:
+  - name: "Alexander Sterling"
+    role: "Founder & Chief Growth Officer"
+    bio: > 
+      Alexander founded Apex Agency in 2015 with a mission to democratize 
+      Fortune 500-grade growth strategies for ambitious brands. A former 
+      McKinsey consultant and Google product lead, he's helped 15+ unicorns 
+      scale to $1B+ valuations. He's a frequent keynote speaker at Web Summit, 
+      Cannes Lions, and SXSW.
+    photo: "/assets/images/team/alex-sterling.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/alexsterling"
+      twitter: "https://twitter.com/alexsterling"
+    expertise:
+      - "Growth Strategy"
+      - "M&A Advisory"
+      - "Board Leadership"
+    fun_fact: "Climbed Mount Kilimanjaro barefoot for charity."
+    order: 1
+
+  - name: "Victoria Chen"
+    role: "Chief Creative Officer"
+    bio: >
+      Victoria brings 18 years of creative leadership from agencies including 
+      Wieden+Kennedy and Droga5. Her work has earned 7 Cannes Lions, 4 D&AD 
+      Pencils, and a One Show Best of Show. She believes the best creative 
+      is built on a foundation of rigorous strategy.
+    photo: "/assets/images/team/victoria-chen.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/victoriachen"
+      instagram: "https://instagram.com/victoriachen"
+    expertise:
+      - "Brand Strategy"
+      - "Creative Direction"
+      - "Design Systems"
+    fun_fact: "Collects vintage typewriters from the 1920s."
+    order: 2
+
+  - name: "Marcus Williams"
+    role: "Chief Technology Officer"
+    bio: >
+      Marcus is a former AWS Principal Engineer who now leads our technology 
+      practice. He's architected systems processing 10B+ daily requests and 
+      holds 12 patents in distributed computing. Under his leadership, our 
+      engineering team has delivered 200+ high-performance digital platforms.
+    photo: "/assets/images/team/marcus-williams.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/marcuswilliams"
+      github: "https://github.com/marcuswilliams"
+    expertise:
+      - "Cloud Architecture"
+      - "AI/ML Engineering"
+      - "Performance Optimization"
+    fun_fact: "Built a ChatGPT clone for his cat."
+    order: 3
+
+  - name: "Sofia Rodriguez"
+    role: "Chief Strategy Officer"
+    bio: >
+      Sofia previously led growth at three Series B startups (two successful 
+      exits) and was VP of Strategy at Ogilvy. She specializes in go-to-market 
+      strategy for technical B2B brands and has a PhD in Behavioral Economics 
+      from Stanford.
+    photo: "/assets/images/team/sofia-rodriguez.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/sofiarodriguez"
+      twitter: "https://twitter.com/sofiarodriguez"
+    expertise:
+      - "GTM Strategy"
+      - "Behavioral Economics"
+      - "B2B Growth"
+    fun_fact: "Certified sommelier with 500+ wine ratings."
+    order: 4
+
+  - name: "James O'Brien"
+    role: "VP, Digital Marketing"
+    bio: >
+      James has managed $200M+ in annual ad spend across Google, Meta, 
+      LinkedIn, and TikTok. His proprietary bidding algorithms have consistently 
+      outperformed market benchmarks by 40%+. He's a Google Ads Hall of Fame 
+      inductee.
+    photo: "/assets/images/team/james-obrien.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/jamesobrien"
+    expertise:
+      - "Paid Media"
+      - "Programmatic Advertising"
+      - "Marketing Automation"
+    fun_fact: "Can name every AdTech acquisition since 2010."
+    order: 5
+
+  - name: "Priya Patel"
+    role: "VP, Data Science"
+    bio: >
+      Priya leads our data practice with 12 years of experience building 
+      ML-powered analytics platforms. She previously built the data science 
+      team at Spotify and holds a PhD in Computational Statistics from MIT. 
+      She's published 20+ papers in peer-reviewed journals.
+    photo: "/assets/images/team/priya-patel.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/priyapatel"
+      twitter: "https://twitter.com/priyapatel"
+    expertise:
+      - "Machine Learning"
+      - "Predictive Analytics"
+      - "Data Engineering"
+    fun_fact: "Plays jazz piano at NYC underground venues."
+    order: 6
+
+  - name: "Olivia Thompson"
+    role: "VP, Content Studio"
+    bio: >
+      Olivia is an award-winning journalist turned content strategist. She 
+      spent 8 years at The New York Times before founding her own content 
+      agency (acquired 2021). Her team's work generates 5M+ monthly organic 
+      readers for client brands.
+    photo: "/assets/images/team/olivia-thompson.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/oliviathompson"
+      twitter: "https://twitter.com/oliviathompson"
+    expertise:
+      - "Content Strategy"
+      - "Editorial Leadership"
+      - "SEO & Distribution"
+    fun_fact: "Has interviewed 3 Nobel laureates."
+    order: 7
+
+  - name: "David Kim"
+    role: "VP, Client Success"
+    bio: >
+      David ensures every client partnership delivers exceptional value. 
+      With 15+ years in agency client leadership, he's maintained a 98% 
+      client satisfaction rate and personally oversees our top-tier 
+      accounts. He's certified in Prosci Change Management.
+    photo: "/assets/images/team/david-kim.jpg"
+    social:
+      linkedin: "https://linkedin.com/in/davidkim"
+    expertise:
+      - "Client Success"
+      - "Change Management"
+      - "Strategic Account Growth"
+    fun_fact: "Marathon runner with 6 major medals."
+    order: 8
+
+values:
+  - title: "Radical Transparency"
+    description: "We share everything — our data, our process, our results. No smoke, no mirrors, no surprises."
+    icon: "eye"
+
+  - title: "Obsessive Craft"
+    description: "Every pixel, every word, every interaction matters. We don't do 'good enough.'"
+    icon: "gem"
+
+  - title: "Audacious Thinking"
+    description: "We dream in moonshots and reverse-engineer the path to get there. Safe is not in our vocabulary."
+    icon: "rocket"
+
+  - title: "Empathetic Partnership"
+    description: "We listen before we advise. Your brand's success is our success. We're in this together."
+    icon: "handshake"
+
+  - title: "Continuous Evolution"
+    description: "The moment we stop learning is the moment we stop leading. We're students of the craft, always."
+    icon: "sync"
+
+  - title: "Impact Over Ego"
+    description: "The best idea wins — regardless of who it comes from. Results speak louder than titles."
+    icon: "bullseye"
+
+awards:
+  - name: "Agency of the Year"
+    organization: "AdWeek"
+    year: 2024
+
+  - name: "Gold — Best Digital Strategy"
+    organization: "Cannes Lions"
+    year: 2024
+
+  - name: "Best Growth Agency — North America"
+    organization: "The Drum"
+    year: 2023
+
+  - name: "Platinum — Best Brand Transformation"
+    organization: "D&AD"
+    year: 2023
+
+  - name: "Top 10 Most Innovative Agencies"
+    organization: "Fast Company"
+    year: 2023
+
+  - name: "Best Place to Work"
+    organization: "Inc. Magazine"
+    year: 2022, 2023, 2024
