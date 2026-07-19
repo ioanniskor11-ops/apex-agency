@@ -47,6 +47,17 @@ module.exports = function (eleventyConfig) {
   });
 
   // ── Filters ─────────────────────────────────────────────
+  // Safe filter (marks output as safe HTML — LiquidJS compatibility)
+  eleventyConfig.addFilter('safe', function (text) {
+    return text;
+  });
+
+  // url_encode filter
+  eleventyConfig.addFilter('url_encode', function (text) {
+    if (!text) return '';
+    return encodeURIComponent(text);
+  });
+
   // Asset URL filter
   eleventyConfig.addFilter('asset_url', function (assetPath) {
     if (!assetPath) return '';
