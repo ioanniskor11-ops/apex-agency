@@ -1,11 +1,10 @@
 ---
 layout: default
-permalink: /case-studies/{{ case.id }}/
 pagination:
   data: case_studies.case_studies
   size: 1
   alias: case
-permalink: "{{ case.url }}/"
+permalink: "/case-studies/{{ case.id }}/"
 eleventyComputed:
   title: "{{ case.title }} — Apex Agency"
   description: "{{ case.short_description }}"
