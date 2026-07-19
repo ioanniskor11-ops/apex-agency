@@ -114,7 +114,7 @@ permalink: /blog/{{ page.fileSlug }}/
   </section>
 
   <!-- ── Related Posts ─────────────────────────────────── -->
-  {% assign related_posts = collections.posts | where_exp: "item", "item.data.tags contains category and item.url != page.url" | limit: 3 %}
+  {% assign related_posts = collections.posts | where_exp: "item", "item.data.tags contains category and item.url != page.url" | slice: 0, 3 %}
   {% if related_posts.size > 0 %}
   <section class="section bg-cloud-dark/30">
     <div class="container-page">

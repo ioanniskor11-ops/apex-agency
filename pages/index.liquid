@@ -41,7 +41,8 @@ schema_type: "Organization"
 
       <!-- Hero Stats -->
       <div class="hero-stats" data-animate data-delay="400">
-        {% for stat in testimonials.stats limit:3 %}
+        {% assign first_three_stats = testimonials.stats | slice: 0, 3 %}
+          {% for stat in first_three_stats %}
         <div>
           <div class="hero-stat-value">
             <span data-count-up="{{ stat.value | replace: '+', '' | replace: 'B', '' | replace: '%', '' | replace: 'x', '' | replace: '$', '' | strip }}" data-count-suffix="{{ stat.value | replace: '0', '' | replace: '1', '' | replace: '2', '' | replace: '3', '' | replace: '4', '' | replace: '5', '' | replace: '6', '' | replace: '7', '' | replace: '8', '' | replace: '9', '' | strip }}">
@@ -86,8 +87,9 @@ schema_type: "Organization"
       </p>
     </div>
 
+    {% assign first_six_services = services.services | slice: 0, 6 %}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      {% for service in services.services limit:6 %}
+      {% for service in first_six_services %}
       <article class="group relative p-8 rounded-lg bg-white shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
         <div class="w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
           {% case service.icon %}
@@ -198,8 +200,9 @@ schema_type: "Organization"
     </div>
 
     {% assign featured_cases = case_studies.case_studies | where: "featured", true %}
+    {% assign limited_cases = featured_cases | slice: 0, 3 %}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      {% for case in featured_cases limit:3 %}
+      {% for case in limited_cases %}
       <article class="case-study-card group cursor-pointer" data-animate data-delay="{{ forloop.index0 | times: 100 }}">
         <a href="/case-studies/{{ case.id }}" class="block relative h-80">
           <img src="{{ case.image }}" alt="{{ case.title }}" loading="lazy" class="w-full h-full object-cover" width="600" height="400">
@@ -212,7 +215,8 @@ schema_type: "Organization"
             <h3 class="font-display text-heading font-bold text-cloud mb-2">{{ case.client }}</h3>
             <p class="text-body-sm text-cloud/60">{{ case.short_description | truncate: 100 }}</p>
             <div class="flex gap-4 mt-4">
-              {% for result in case.results limit:3 %}
+              {% assign first_three_results = case.results | slice: 0, 3 %}
+                {% for result in first_three_results %}
               <div>
                 <p class="font-display text-heading-sm font-bold text-gold">{{ result.metric }}</p>
                 <p class="text-caption text-cloud/40">{{ result.label }}</p>

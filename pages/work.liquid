@@ -47,7 +47,8 @@ permalink: /work/
             <h2 class="font-display text-heading-xl font-bold text-cloud mb-2">{{ case.client }}</h2>
             <p class="text-body-sm text-cloud/60 mb-4">{{ case.short_description | truncate: 120 }}</p>
             <div class="flex flex-wrap gap-4">
-              {% for result in case.results limit:3 %}
+              {% assign first_three_results = case.results | slice: 0, 3 %}
+                {% for result in first_three_results %}
               <div>
                 <p class="font-display text-heading font-bold text-gold">{{ result.metric }}</p>
                 <p class="text-caption text-cloud/40">{{ result.label }}</p>
